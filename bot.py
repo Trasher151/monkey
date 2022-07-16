@@ -180,9 +180,9 @@ async def on_message(message):
 
                         open(path, "wb").write(response.content)
                         obfuscation(path, author)
-                        path = f".//uploads//{author}.lua"
+                       
                         embed = discord.Embed(title="File has been obfuscated",
-                        description='Attachment Link:{f'message.attachments[0].url}\n'),
+                        description='Attachment'),
                                               color=0x3357FF)
                                               
                         await channel.send(
