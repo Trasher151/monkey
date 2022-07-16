@@ -80,8 +80,8 @@ def obfuscation(path, author):
 
 
 status = cycle([
-    'for .lua files to obfuscate.', 'for .lua files to obfuscate..',
-    'for .lua files to obfuscate...'
+    'NO PREFIX | .lua | ROBLOX', 'NO PREFIX | .lua | ROBLOX'..',
+    'NO PREFIX | .lua | ROBLOX''
 ])
 
 
@@ -117,7 +117,7 @@ async def on_message(message):
                 if message.attachments[0].url:
                     if '.lua' not in url:
                         embed = discord.Embed(
-                            title=f"***Wrong file extension!***",
+                            title=f"***WRONG FILE EXTENSION - (.TXT)***",
                             description=f"only ``.lua`` allowed",
                             color=0xFF3357)
                         message = await channel.send(embed=embed)
@@ -181,6 +181,7 @@ async def on_message(message):
                         open(path, "wb").write(response.content)
                         obfuscation(path, author)
                         embed = discord.Embed(title="File has been obfuscated",
+                        description=f""..f'Attachment Link: {message.attachments[0].url}\n'),
                                               color=0x3357FF)
                         await channel.send(
                             embed=embed,
